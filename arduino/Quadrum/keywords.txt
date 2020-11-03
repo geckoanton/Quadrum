@@ -1,0 +1,8 @@
+QuadrumSerial	KEYWORD1
+QuadrumCode	KEYWORD1
+start	KEYWORD2
+terminate	KEYWORD2
+getChannelBrightness	KEYWORD2
+getVoxelBrightness	KEYWORD2
+getChannelState	KEYWORD2
+getVoxelState	KEYWORD2

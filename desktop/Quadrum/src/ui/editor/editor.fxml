@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SpinnerValueFactory.DoubleSpinnerValueFactory?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainAnchorPane" prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.editor.EditorController">
+    <children>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #E8E8E8;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+            <children>
+                <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #E8E8E8;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <BorderPane prefHeight="30.0" prefWidth="1200.0" VBox.vgrow="NEVER">
+                            <center>
+                                <TabPane fx:id="projectTabPane" nodeOrientation="RIGHT_TO_LEFT" prefHeight="130.0" prefWidth="1200.0" tabClosingPolicy="ALL_TABS" BorderPane.alignment="CENTER" />
+                            </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                            <center>
+                                <SplitPane dividerPositions="0.3" prefHeight="766.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
+                                    <items>
+                                        <AnchorPane minHeight="0.0" minWidth="300.0" prefHeight="160.0" prefWidth="100.0">
+                                            <children>
+                                                <TabPane fx:id="serialPaintTabPane" prefHeight="200.0" prefWidth="200.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <tabs>
+                                                        <Tab fx:id="paintTab" text="Paint">
+                                                            <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                                                    <children>
+                                                                        <SplitPane dividerPositions="0.65" orientation="VERTICAL" prefHeight="700.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                            <items>
+                                                                                <AnchorPane minHeight="200.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #ffffff;">
+                                                                                    <children>
+                                                                                        <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                                            <children>
+                                                                                                <Pane fx:id="paintPanelPane" prefHeight="455.0" prefWidth="444.0" VBox.vgrow="ALWAYS">
+                                                                                                    <children>
+                                                                                                        <Canvas fx:id="paintPanelCanvas" height="200.0" width="200.0" />
+                                                                                                    </children>
+                                                                                                </Pane>
+                                                                                                <BorderPane prefHeight="0.0" prefWidth="444.0" VBox.vgrow="NEVER">
+                                                                                                    <right>
+                                                                                                        <Button id="nextButton" fx:id="nextPageButton" mnemonicParsing="false" onAction="#nextPageAction" prefHeight="26.0" prefWidth="26.0" styleClass="iconButton" BorderPane.alignment="CENTER" />
+                                                                                                    </right>
+                                                                                                    <left>
+                                                                                                        <Button id="previousButton" fx:id="previousPageButton" maxHeight="26.0" maxWidth="26.0" mnemonicParsing="false" onAction="#previousPageAction" prefHeight="26.0" prefWidth="26.0" styleClass="iconButton" BorderPane.alignment="CENTER" />
+                                                                                                    </left>
+                                                                                                    <center>
+                                                                                                        <ColorPicker fx:id="paintColorPicker" minHeight="26.0" onAction="#paintColorPickerAction" prefWidth="100.0" BorderPane.alignment="CENTER" />
+                                                                                                    </center>
+                                                                                                </BorderPane>
+                                                                                            </children>
+                                                                                        </VBox>
+                                                                                    </children>
+                                                                                    <padding>
+                                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                                    </padding>
+                                                                                    <opaqueInsets>
+                                                                                        <Insets />
+                                                                                    </opaqueInsets>
+                                                                                </AnchorPane>
+                                                                                <AnchorPane minHeight="100.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                                                                    <children>
+                                                                                        <VBox prefHeight="190.0" spacing="5" style="-fx-background-color: #ffffff;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                                            <children>
+                                                                                                <BorderPane prefHeight="30.0" prefWidth="434.0" VBox.vgrow="NEVER">
+                                                                                                    <right>
+                                                                                                        <HBox alignment="CENTER_LEFT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="26.0" spacing="5" BorderPane.alignment="CENTER">
+                                                                                                            <children>
+                                                                                                                <CheckBox fx:id="loopCheckBox" mnemonicParsing="false" onAction="#loopCheckBoxAction" text="Replay">
+                                                                                                                    <graphic>
+                                                                                                                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                                            <image>
+                                                                                                                                <Image url="@../../res/images/icons/loopIcon.png" />
+                                                                                                                            </image>
+                                                                                                                        </ImageView>
+                                                                                                                    </graphic>
+                                                                                                                </CheckBox>
+                                                                                                            </children>
+                                                                                                        </HBox>
+                                                                                                    </right>
+                                                                                                    <left>
+                                                                                                        <HBox alignment="CENTER_LEFT" spacing="5" BorderPane.alignment="CENTER">
+                                                                                                            <children>
+                                                                                                                <Text fx:id="timeDurationText" strokeType="OUTSIDE" strokeWidth="0.0" text="Time">
+                                                                                                                    <HBox.margin>
+                                                                                                                        <Insets right="-3.0" />
+                                                                                                                    </HBox.margin>
+                                                                                                                </Text>
+                                                                                                                <ImageView fx:id="timeDurationImageView" fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                                                                                    <image>
+                                                                                                                        <Image url="@../../res/images/icons/timeIcon.png" />
+                                                                                                                    </image>
+                                                                                                                </ImageView>
+                                                                                                                <Spinner fx:id="frameDurationSpinner" editable="true" prefHeight="26.0" prefWidth="75.0">
+                                                                                                                    <valueFactory>
+                                                                                                                        <SpinnerValueFactory.DoubleSpinnerValueFactory amountToStepBy="100" initialValue="500.0" max="60000" min="0" />
+                                                                                                                    </valueFactory>
+                                                                                                                </Spinner>
+                                                                                                                <Text fx:id="msDurationText" strokeType="OUTSIDE" strokeWidth="0.0" text="ms" />
+                                                                                                            </children>
+                                                                                                            <BorderPane.margin>
+                                                                                                                <Insets />
+                                                                                                            </BorderPane.margin>
+                                                                                                        </HBox>
+                                                                                                    </left>
+                                                                                                </BorderPane>
+                                                                                                <ListView fx:id="frameListView" onEditStart="#frameListViewEditStart" onMousePressed="#frameListViewPressedAction" prefHeight="154.0" prefWidth="272.0" VBox.vgrow="ALWAYS" />
+                                                                                                <BorderPane prefHeight="26.0" prefWidth="139.0" VBox.vgrow="NEVER">
+                                                                                                    <left>
+                                                                                                        <HBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="26.0" spacing="5.0" BorderPane.alignment="CENTER">
+                                                                                                            <children>
+                                                                                                                <Button id="addButton" fx:id="addFrameButton" mnemonicParsing="false" onAction="#addFrameAction" prefHeight="26.0" prefWidth="26.0" styleClass="iconButton" />
+                                                                                                                <Button id="removeButton" fx:id="removeFrameButton" mnemonicParsing="false" onAction="#removeFrameAction" prefHeight="26.0" prefWidth="26.0" styleClass="iconButton" />
+                                                                                                            </children>
+                                                                                                        </HBox>
+                                                                                                    </left>
+                                                                                                    <right>
+                                                                                                        <HBox alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="26.0" spacing="5">
+                                                                                                            <children>
+                                                                                                                <Button fx:id="pasteFrameButton" mnemonicParsing="false" onAction="#pasteFrameAction" prefHeight="26.0" text="Paste" />
+                                                                                                                <Button fx:id="copyFrameButton" mnemonicParsing="false" onAction="#copyFrameAction" prefHeight="26.0" text="Copy" />
+                                                                                                            </children>
+                                                                                                        </HBox>
+                                                                                                    </right>
+                                                                                                </BorderPane>
+                                                                                            </children>
+                                                                                            <padding>
+                                                                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                                            </padding>
+                                                                                        </VBox>
+                                                                                    </children>
+                                                                                </AnchorPane>
+                                                                            </items>
+                                                                        </SplitPane>
+                                                                    </children>
+                                                                </AnchorPane>
+                                                            </content>
+                                                        </Tab>
+                                                        <Tab fx:id="serialTab" text="Serial">
+                                                            <content>
+                                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                                                                    <children>
+                                                                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="5" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                                            <children>
+                                                                                <HBox alignment="CENTER_LEFT" spacing="5">
+                                                                                    <children>
+                                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Available Ports" />
+                                                                                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                                                            <image>
+                                                                                                <Image url="@../../res/images/icons/mcuIcon.png" />
+                                                                                            </image>
+                                                                                        </ImageView>
+                                                                                        <Separator prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                                <ListView fx:id="availablePortsListView" onMousePressed="#availablePortsListViewPressedAction" prefHeight="200.0" prefWidth="200.0" />
+                                                                                <HBox alignment="CENTER_LEFT" prefHeight="4.0" prefWidth="316.0" spacing="5">
+                                                                                    <children>
+                                                                                        <RadioButton fx:id="customPortRadioButton" mnemonicParsing="false" onAction="#customPortAction" text="Custom Port" HBox.hgrow="NEVER" />
+                                                                                        <TextField fx:id="customPortTextField" prefHeight="26.0" prefWidth="131.0" promptText="Custom Port" HBox.hgrow="ALWAYS" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                                <BorderPane prefHeight="0.0" prefWidth="316.0">
+                                                                                    <right>
+                                                                                        <Button fx:id="disconnectSerialButton" cancelButton="true" mnemonicParsing="false" onAction="#disconnectSerialAction" text="Disconnect" BorderPane.alignment="CENTER" />
+                                                                                    </right>
+                                                                                    <left>
+                                                                                        <HBox spacing="5" BorderPane.alignment="CENTER">
+                                                                                            <children>
+                                                                                                <Button fx:id="connectSerialButton" defaultButton="true" mnemonicParsing="false" onAction="#connectSerialAction" text="Connect" />
+                                                                                            </children>
+                                                                                        </HBox>
+                                                                                    </left>
+                                                                                </BorderPane>
+                                                                                <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" spacing="5">
+                                                                                    <children>
+                                                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Console" />
+                                                                                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                                                            <image>
+                                                                                                <Image url="@../../res/images/icons/consoleIcon.png" />
+                                                                                            </image>
+                                                                                        </ImageView>
+                                                                                        <Separator prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                                                    </children>
+                                                                                </HBox>
+                                                                                <TextArea fx:id="consoleTextArea" editable="false" prefHeight="401.0" prefWidth="316.0" styleClass="console" VBox.vgrow="ALWAYS" />
+                                                                            </children>
+                                                                        </VBox>
+                                                                    </children>
+                                                                    <padding>
+                                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                                    </padding>
+                                                                </AnchorPane>
+                                                            </content>
+                                                        </Tab>
+                                          <Tab fx:id="codeTab" text="Code">
+                                            <content>
+                                              <AnchorPane fx:id="codeGeneratorAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                                                   <children>
+                                                      <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <children>
+                                                            <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="312.0" spacing="5.0" VBox.vgrow="NEVER">
+                                                               <children>
+                                                                  <Text fx:id="codeGeneratorText" strokeType="OUTSIDE" strokeWidth="0.0" text="Code Generator" />
+                                                                  <ImageView fx:id="codeGeneratorImageView" fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../../res/images/icons/codeIcon.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <Separator prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                                                               </children>
+                                                            </HBox>
+                                                            <TextArea fx:id="codeGeneratorTextArea" editable="false" prefHeight="200.0" prefWidth="200.0" styleClass="code" VBox.vgrow="ALWAYS" />
+                                                            <BorderPane prefHeight="0.0" prefWidth="312.0" VBox.vgrow="NEVER">
+                                                               <VBox.margin>
+                                                                  <Insets />
+                                                               </VBox.margin>
+                                                               <right>
+                                                                  <Button mnemonicParsing="false" onAction="#copyCodeAction" text="Copy" BorderPane.alignment="CENTER" />
+                                                               </right>
+                                                               <left>
+                                                                  <Button defaultButton="true" mnemonicParsing="false" onAction="#generateCodeAction" text="Generate" BorderPane.alignment="CENTER" />
+                                                               </left>
+                                                            </BorderPane>
+                                                            <Separator prefWidth="200.0" />
+                                                            <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="137.0" spacing="5.0">
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Color Channels" wrappingWidth="132.0" />
+                                                                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../../res/images/icons/colorChannelsIcon.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ComboBox fx:id="colorChannelsComboBox" prefHeight="26.0" prefWidth="99999.0" HBox.hgrow="ALWAYS" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="137.0" spacing="5.0">
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Channel Resolution" wrappingWidth="132.0" />
+                                                                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                                     <image>
+                                                                        <Image url="@../../res/images/icons/colorResolutionIcon.png" />
+                                                                     </image>
+                                                                  </ImageView>
+                                                                  <ComboBox fx:id="channelResolutionComboBox" prefHeight="26.0" prefWidth="99999.0" HBox.hgrow="ALWAYS" />
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                   <padding>
+                                                      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                   </padding>
+                                                </AnchorPane>
+                                            </content>
+                                          </Tab>
+                                                    </tabs>
+                                                </TabPane>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane minHeight="0.0" minWidth="200.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #121212;">
+                                            <children>
+                                                <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <children>
+                                                        <Pane fx:id="simulatorPanelPane" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                                            <children>
+                                                                <Canvas fx:id="simulatorPanelCanvas" height="200.0" width="200.0" />
+                                                            </children>
+                                                        </Pane>
+                                                        <BorderPane prefHeight="0.0" prefWidth="835.0" VBox.vgrow="NEVER">
+                                                            <left>
+                                                                <HBox spacing="5.0" BorderPane.alignment="CENTER">
+                                                                    <children>
+                                                                        <Button id="playButton" fx:id="playAnimationButton" mnemonicParsing="false" onAction="#playAnimationAction" prefHeight="26.0" prefWidth="26.0" styleClass="iconButton" />
+                                                                        <Button id="stopButton" fx:id="stopAnimationButton" mnemonicParsing="false" onAction="#stopAnimationAction" prefHeight="26.0" prefWidth="26.0" styleClass="iconButton" />
+                                                                    </children>
+                                                                </HBox>
+                                                            </left>
+                                             <right>
+                                                <BorderPane prefHeight="0.0" prefWidth="0.0" BorderPane.alignment="CENTER">
+                                                   <center>
+                                                                      <Text fx:id="frameNameText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="FRAME" BorderPane.alignment="CENTER">
+                                                                          <BorderPane.margin>
+                                                                              <Insets right="9.0" />
+                                                                          </BorderPane.margin>
+                                                                      </Text>
+                                                   </center>
+                                                </BorderPane>
+                                             </right>
+                                                        </BorderPane>
+                                                    </children>
+                                                    <padding>
+                                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                                    </padding>
+                                                </VBox>
+                                            </children>
+                                        </AnchorPane>
+                                    </items>
+                                </SplitPane>
+                            </center>
+                            <opaqueInsets>
+                                <Insets top="-1.0" />
+                            </opaqueInsets>
+                        </BorderPane>
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+        <MenuBar fx:id="mainMenuBar" layoutY="1.0" maxWidth="26.0" minHeight="26.0" prefHeight="26.0" prefWidth="768.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#newProjectAction" text="New">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="N" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem mnemonicParsing="false" onAction="#openProjectAction" text="Open">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="O" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="saveMenuItem" mnemonicParsing="false" onAction="#saveProjectAction" text="Save">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="S" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                            </accelerator>
+                        </MenuItem>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem fx:id="undoMenuItem" mnemonicParsing="false" onAction="#undoAction" text="Undo">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="Z" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="redoMenuItem" mnemonicParsing="false" onAction="#redoAction" text="Redo">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="Y" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                            </accelerator>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="copyFrameMenuItem" mnemonicParsing="false" onAction="#copyFrameAction" text="Copy">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="C" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="pasteFrameMenuItem" mnemonicParsing="false" onAction="#pasteFrameAction" text="Paste">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="V" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                            </accelerator>
+                        </MenuItem>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Simulator">
+                    <items>
+                        <MenuItem fx:id="playMenuItem" mnemonicParsing="false" onAction="#playAnimationAction" text="Play">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="P" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                            </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="stopMenuItem" mnemonicParsing="false" onAction="#stopAnimationAction" text="Stop">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="H" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                            </accelerator>
+                        </MenuItem>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <CheckMenuItem fx:id="gridCheckMenuItem" mnemonicParsing="false" onAction="#gridAction" selected="true" text="Grid">
+                            <accelerator>
+                                <KeyCodeCombination alt="UP" code="G" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                            </accelerator>
+                        </CheckMenuItem>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#helpAction" text="Help" />
+                        <MenuItem mnemonicParsing="false" onAction="#aboutAction" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </children>
+</AnchorPane>

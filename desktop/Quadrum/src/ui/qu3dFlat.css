@@ -1,0 +1,363 @@
+/*
+ * qu3dFlat.css
+ *
+ *       Created on:  Okt 29, 2020
+ *  Last Updated on:  Okt 29, 2020
+ *           Author:  Anton Gecko https://github.com/antongecko
+ *
+ * Quadrum is a LED-Cube framework and editor.
+ * Copyright (C) 2020  antongecko
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <https://www.gnu.org/licenses/>.
+ */
+
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url('/res/fonts/RobotoMono-Regular.ttf');
+}
+
+* {
+	-lightPurple: #C978B8;
+	-darkPurple: #B20093;
+	-lightGreen: #56C222;
+	-darkGreen: #3B9B1B;
+
+	-nonHoverGreen: #A1D97D;
+	-hoverGreen: #DFEED4;
+	-pressedGreen: #56C222;
+	-nonHoverPurple: #C978B8;
+	-hoverPurple: #E5CCE6;
+	-pressedPurple: #B20093;
+
+	-white: #FFFFFF;
+	-black: #000000;
+	-almostBlack: #121212;
+	-consoleGreen: #00FF00;
+	-codeBlue: #C1F7F7;
+	-hyperlinkBlue: #039be5;
+	-grayA: #E8E8E8;
+	-grayB: #D1D1D1;
+	-grayC: #B9B9B9;
+}
+.root {
+	-fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+
+	-fx-border-style: none;
+	-fx-base : -white;
+}
+
+.button {
+	-fx-background-color: -grayB;
+	-fx-background-radius: 4;
+}
+.button:hover {
+	-fx-background-color: -grayA;
+}
+.button:armed {
+    -fx-background-color: -grayC;
+}
+.button:default {
+	-fx-background-color: -nonHoverGreen;
+}
+.button:default:hover {
+	-fx-background-color: -hoverGreen;
+}
+.button:default:armed {
+	-fx-background-color: -pressedGreen;
+}
+.button:cancel {
+	-fx-background-color: -nonHoverPurple;
+}
+.button:cancel:hover {
+	-fx-background-color: -hoverPurple;
+}
+.button:cancel:armed {
+	-fx-background-color: -pressedPurple;
+}
+
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button {
+	-fx-background-color: -grayB;
+}
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover {
+	-fx-background-color: -grayA;
+}
+.spinner .increment-arrow-button:pressed,
+.spinner .decrement-arrow-button:pressed {
+	-fx-background-color: -grayC;
+}
+
+.toggle-button {
+	-fx-background-color: -grayB;
+}
+.toggle-button:hover {
+	-fx-background-color: -grayA;
+}
+.toggle-button:selected {
+	-fx-background-color: -grayC;
+}
+
+.tab-pane {
+	-fx-background-color: -grayA;
+}
+.tab-pane *.tab-header-background {
+	-fx-background-color: -grayA;
+}
+.tab-pane *.tab-header-area *.headers-region *.tab {
+	-fx-background-color : -grayB;
+}
+.tab-pane *.tab-header-area *.headers-region *.tab:hover {
+	-fx-background-color : -white;
+}
+.tab-pane *.tab-header-area *.headers-region *.tab:selected {
+	-fx-background-color : -white;
+}
+.tab-pane *.tab-header-area *.headers-region *.tab:selected:hover {
+	-fx-background-color : -white;
+}
+.tab-pane *.tab-header-area *.headers-region *.tab:disabled{
+	-fx-background-color: -grayA;
+}
+
+.console {
+	-fx-text-box-border: transparent;
+	-fx-control-inner-background: transparent;
+	-fx-text-fill: -black;
+	-fx-text-fill: -consoleGreen;
+	-fx-font-family: 'Roboto Mono';
+	-fx-background-radius: 4;
+	-fx-border-color: transparent;
+	-fx-border-width: 0;
+}
+.console .content {
+	-fx-background-color: -almostBlack;
+	-fx-background-radius: 4;
+}
+
+.code {
+	-fx-text-box-border: transparent;
+	-fx-control-inner-background: transparent;
+	-fx-text-fill: -black;
+	-fx-text-fill: -black;
+	-fx-font-family: 'Roboto Mono';
+	-fx-background-radius: 4;
+	-fx-border-color: transparent;
+	-fx-border-width: 0;
+}
+.code .content {
+	-fx-background-color: -codeBlue;
+	-fx-background-radius: 4;
+}
+
+.list-view {
+	-fx-background-color: -white;
+	-fx-background-radius: 4;
+	-fx-border-color: -grayA;
+	-fx-border-radius: 4;
+}
+.list-cell {
+	-fx-background-color: -grayA;
+	-fx-background-radius: 4;
+	-fx-text-fill: -black;
+}
+.list-cell:hover {
+	-fx-background-color: -white;
+}
+.list-cell:selected {
+	-fx-background-color: -nonHoverGreen;
+}
+.list-cell:empty {
+	-fx-background-color: -white;
+}
+
+.scroll-bar {
+	-fx-background-color: -white;
+}
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+	-fx-background-color: -grayB;
+}
+.scroll-bar .increment-button:hover,
+.scroll-bar .decrement-button:hover {
+	-fx-background-color: -grayA;
+}
+.scroll-bar .increment-button:pressed,
+.scroll-bar .decrement-button:pressed {
+	-fx-background-color: -grayC;
+}
+.scroll-bar .thumb {
+	-fx-background-color: -grayB;
+	-fx-background-radius : 2.0em;
+}
+.scroll-bar .thumb:hover {
+	-fx-background-color: -grayA;
+}
+.scroll-bar .thumb:pressed {
+	-fx-background-color: -grayC;
+}
+
+.menu-bar {
+	-fx-background-color: -white;
+}
+.menu-button {
+	-fx-background-color: -white;
+}
+.menu-button:hover {
+	-fx-background-color: -grayA;
+}
+.menu-button:pressed {
+	-fx-background-color: -grayB;
+}
+.menu-button .label {
+	-fx-text-fill: -black;
+}
+.menu-item {
+	-fx-background-color: -white;
+}
+.menu-item:hover {
+	-fx-background-color: -grayA;
+}
+.menu-item:pressed {
+	-fx-background-color: -grayB;
+}
+
+.slider *.track {
+	-fx-background-color : -grayB;
+ }
+.slider *.thumb {
+	-fx-background-color : -nonHoverGreen;
+}
+.slider *.thumb:hover {
+	-fx-background-color : -hoverGreen;
+}
+
+.check-box *.box{
+	-fx-background-color : -grayB;
+}
+.check-box *.box:hover{
+	-fx-background-color : -grayA;
+}
+.check-box *.box:pressed{
+	-fx-background-color : -grayC;
+}
+.check-box:selected *.box *.mark{
+	-fx-background-color : -darkGreen;
+}
+.check-box:indeterminate *.box *.mark{
+	-fx-background-color : -darkGreen;
+}
+
+.radio-button .radio {
+	-fx-background-color : -grayB;
+}
+.radio-button .radio:hover{
+	-fx-background-color : -grayA;
+}
+.radio-button .radio:pressed{
+	-fx-background-color : -grayC;
+}
+.radio-button .dot {
+	-fx-mark-highlight-color: -darkGreen;
+	-fx-mark-color: -darkGreen;
+}
+
+.split-pane {
+	-fx-box-border: transparent;
+}
+.split-pane *.split-pane-divider {
+	-fx-background-color: -grayA;
+}
+
+.combo-box-base {
+	-fx-background-color: -grayB;
+}
+.combo-box-base:hover {
+	-fx-background-color: -grayA;
+}
+.combo-box-base:armed {
+	-fx-background-color: -grayC;
+}
+
+.text-field {
+	-fx-background-color: -white;
+	-fx-border-color: -grayA;
+	-fx-border-radius: 4;
+}
+
+.iconButton {
+	-fx-border-color: transparent;
+	-fx-border-width: 0;
+	-fx-background-radius: 0;
+	-fx-background-color: transparent;
+	-fx-background-size: 26px 26px;
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+}
+.iconButton:hover {
+	-fx-border-color: transparent;
+	-fx-border-width: 0;
+	-fx-background-radius: 0;
+	-fx-background-color: transparent;
+	-fx-background-size: 26px 26px;
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+	-fx-cursor: hand;
+}
+.iconButton:armed {
+	-fx-border-color: transparent;
+	-fx-border-width: 0;
+	-fx-background-radius: 0;
+	-fx-background-color: transparent;
+	-fx-background-size: 26px 26px;
+	-fx-background-repeat: no-repeat;
+	-fx-background-position: center;
+	-fx-cursor: hand;
+}
+
+.hyperlink {
+    -fx-text-fill: -hyperlinkBlue;
+}
+.hyperlink:visited {
+    -fx-text-fill: -hyperlinkBlue;
+    -fx-underline: false;
+}
+.hyperlink:hover {
+    -fx-text-fill: -hyperlinkBlue;
+    -fx-underline: true;
+}
+
+#previousButton {
+	-fx-background-image: url('/res/images/icons/previousIcon.png');
+}
+#nextButton {
+	-fx-background-image: url('/res/images/icons/nextIcon.png');
+}
+#addButton {
+	-fx-background-image: url('/res/images/icons/plusIcon.png');
+}
+#removeButton {
+	-fx-background-image: url('/res/images/icons/minusIcon.png');
+}
+#playButton {
+	-fx-background-image: url('/res/images/icons/playIcon.png');
+}
+#stopButton {
+	-fx-background-image: url('/res/images/icons/stopIcon.png');
+}
+
+#tilesBackground {
+    -fx-background-image: url("/res/images/tilesBackground.png");
+}

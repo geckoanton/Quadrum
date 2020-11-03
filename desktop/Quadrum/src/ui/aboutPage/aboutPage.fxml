@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="370.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.aboutPage.AboutPageController">
+    <children>
+        <VBox prefHeight="200.0" prefWidth="100.0" spacing="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <BorderPane id="tilesBackground" minHeight="100.0" prefHeight="100.0" VBox.vgrow="NEVER">
+                    <center>
+                        <ImageView fitHeight="64.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                            <image>
+                                <Image url="@../../res/images/logoName.png" />
+                            </image>
+                        </ImageView>
+                    </center>
+                </BorderPane>
+            <VBox prefHeight="34.0" prefWidth="550.0" VBox.vgrow="NEVER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="11.0" prefWidth="550.0" spacing="5.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Version:" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Quadrum 2.0" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="0.0" prefWidth="541.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contact me:" />
+                        <Hyperlink onAction="#contactHyperlinkAction" text="antongecko37@gmail.com" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets top="10.0" />
+                     </opaqueInsets>
+                     <padding>
+                        <Insets bottom="-2.0" />
+                     </padding>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="12.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="0.0" prefWidth="550.0" VBox.vgrow="NEVER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="0.0" prefWidth="550.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="For license agreement and other information, visit">
+                           <HBox.margin>
+                              <Insets bottom="-2.0" />
+                           </HBox.margin></Text>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <Hyperlink onAction="#quadrumHyperLinkAction" text="https://antongecko.github.io/quadrum/" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="12.0" />
+               </padding>
+            </VBox>
+                <VBox alignment="CENTER" prefHeight="0.0" prefWidth="541.0" VBox.vgrow="NEVER">
+                    <VBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                    </VBox.margin>
+                    <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Third party implementations">
+                     <VBox.margin>
+                        <Insets bottom="-2.0" />
+                     </VBox.margin>
+                  </Text>
+                        <HBox alignment="CENTER" prefHeight="0.0" prefWidth="541.0">
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Icons:" />
+                                <Hyperlink onAction="#icons8HyperLinkAction" text="https://icons8.com/" />
+                            </children>
+                     <opaqueInsets>
+                        <Insets top="10.0" />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets bottom="-4.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="-2.0" />
+                     </padding>
+                        </HBox>
+                  <HBox alignment="CENTER" prefHeight="0.0" prefWidth="541.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Serial Library:" />
+                        <Hyperlink onAction="#serialLibraryHyperLinkAction" text="https://fazecast.github.io/jSerialComm/" />
+                     </children>
+                     <padding>
+                        <Insets bottom="-2.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="-2.0" />
+                     </VBox.margin>
+                  </HBox>
+                    </children>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+               <padding>
+                  <Insets bottom="12.0" />
+               </padding></VBox>
+                <VBox alignment="CENTER" prefHeight="7.0" prefWidth="550.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <HBox alignment="BOTTOM_CENTER" prefHeight="0.0" prefWidth="550.0" spacing="5.0">
+                            <children>
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Copyright © 2020 antongecko. All rights reserved.">
+                           <HBox.margin>
+                              <Insets bottom="-2.0" />
+                           </HBox.margin></Text>
+                            </children>
+                        </HBox>
+                        <Hyperlink onAction="#antongeckoHyperLinkAction" text="https://github.com/antongecko" />
+                    </children>
+                </VBox>
+                <BorderPane prefHeight="0.0" prefWidth="550.0" VBox.vgrow="NEVER">
+                    <right>
+                        <Button defaultButton="true" mnemonicParsing="false" onAction="#okAction" prefHeight="26.0" prefWidth="80.0" text="Ok" BorderPane.alignment="CENTER">
+                            <BorderPane.margin>
+                                <Insets />
+                            </BorderPane.margin></Button>
+                    </right>
+                    <VBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" />
+                    </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" />
+               </padding></BorderPane>
+            </children>
+        </VBox>
+    </children>
+   <opaqueInsets>
+      <Insets bottom="5.0" />
+   </opaqueInsets>
+</AnchorPane>

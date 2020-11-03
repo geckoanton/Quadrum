@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.editor.welcomePage.WelcomePageController">
+    <children>
+        <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <BorderPane id="tilesBackground" minHeight="150.0" prefHeight="172.0" prefWidth="890.0" VBox.vgrow="NEVER">
+                    <center>
+                        <ImageView fitHeight="256.0" fitWidth="384.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                            <image>
+                                <Image url="@../../../res/images/logoName.png" />
+                            </image>
+                        </ImageView>
+                    </center>
+                </BorderPane>
+                <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                    <children>
+                        <BorderPane maxWidth="150.0" prefHeight="200.0" prefWidth="150.0" HBox.hgrow="NEVER">
+                            <top>
+                                <VBox minWidth="150.0" prefHeight="310.0" prefWidth="150.0" spacing="5.0" BorderPane.alignment="CENTER">
+                                    <children>
+                                        <Button defaultButton="true" mnemonicParsing="false" onAction="#newProjectAction" prefHeight="150.0" prefWidth="150.0">
+                                            <graphic>
+                                                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                                                    <children>
+                                                        <ImageView fitHeight="96.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../../../res/images/icons/newLargeIcon.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="New" />
+                                                    </children>
+                                                </VBox>
+                                            </graphic>
+                                        </Button>
+                                        <Button mnemonicParsing="false" onAction="#openProjectAction" prefHeight="150.0" prefWidth="150.0">
+                                            <graphic>
+                                                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                                                    <children>
+                                                        <ImageView fitHeight="96.0" fitWidth="96.0" pickOnBounds="true" preserveRatio="true">
+                                                            <image>
+                                                                <Image url="@../../../res/images/icons/openLargeIcon.png" />
+                                                            </image>
+                                                        </ImageView>
+                                                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Open" />
+                                                    </children>
+                                                </VBox>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                            </top>
+                            <bottom>
+                                <Button cancelButton="true" mnemonicParsing="false" onAction="#closeWelcomePageAction" prefHeight="26.0" prefWidth="150.0" text="Close" BorderPane.alignment="CENTER" />
+                            </bottom>
+                            <padding>
+                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                            </padding>
+                        </BorderPane>
+                        <Separator orientation="VERTICAL" prefHeight="200.0">
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets></Separator>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                            <center>
+                                <WebView fx:id="welcomeWebView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                            </center>
+                        </BorderPane>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
