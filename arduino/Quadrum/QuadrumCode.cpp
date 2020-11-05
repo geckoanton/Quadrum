@@ -2,7 +2,7 @@
  * QuadrumCode.cpp
  *
  *       Created on:  Okt 29, 2020
- *  Last Updated on:  Okt 29, 2020
+ *  Last Updated on:  Nov 5, 2020
  *           Author:  Anton Gecko https://github.com/antongecko
  *
  * Quadrum is a LED-Cube framework and editor.
@@ -43,7 +43,7 @@ void QuadrumCode::startup(const uint8_t* animationData, uint16_t planeRate) {
 	this->frameCount = bti.value;
 	
 	int16_t frameBitSize = pow(cubeSide, 3) * channelCount * channelSize;
-	this->frameDataSize = (int16_t) ((frameBitSize / BYTE_SIZE) + 1) + 4;	// + 4 because of frame duration at beginning
+	this->frameDataSize = (int16_t) (ceil((float) frameBitSize / (float) BYTE_SIZE)) + 4;	// + 4 (sizeof(float)) because of frame duration at beginning
 }
 
 bool QuadrumCode::start() {
@@ -57,7 +57,7 @@ bool QuadrumCode::start() {
 			ByteToFloat frameDuration;
 			for(int16_t i = 0; i < sizeof(float); i++)
 				frameDuration.bytes[i] = (uint8_t) animationData[INIT_DATA_SIZE + (currentFrame * frameDataSize) + i];
-			incrementFrameTime = (uint32_t) (frameDuration.value * 1000) + micros();
+			incrementFrameTime = (uint32_t) (frameDuration.value * 1000.0f) + micros();
 			
 			voxelData = &animationData[INIT_DATA_SIZE + (currentFrame * frameDataSize) + sizeof(float)];
 			currentFrame++;
