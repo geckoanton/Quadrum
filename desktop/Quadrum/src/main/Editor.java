@@ -3,10 +3,10 @@
  *
  *       Created on:  Okt 29, 2020
  *  Last Updated on:  Okt 29, 2020
- *           Author:  Anton Gecko https://github.com/antongecko
+ *           Author:  Gecko Anton https://github.com/geckoanton
  *
  * Quadrum is a LED-Cube framework and editor.
- * Copyright (C) 2020  antongecko
+ * Copyright (C) 2020  geckoanton
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -45,13 +45,13 @@ public class Editor extends Application {
 	public static final String LOGO_LOCATION = "/res/images/logo.png",
 			DEFAULT_FONT_LOCATION = "",
 			STYLE_SHEET_LOCATION = "/ui/qu3dFlat.css",
-			QUADRUM_URL = "https://antongecko.github.io/quadrum/",
-			HELP_URL = "https://antongecko.github.io/quadrum/help",
-			WELCOME_PAGE_URL = "https://antongecko.github.io/quadrum/release-2.0",
+			QUADRUM_URL = "https://geckoanton.github.io/quadrum/",
+			HELP_URL = "https://geckoanton.github.io/quadrum/help",
+			WELCOME_PAGE_URL = "https://geckoanton.github.io/quadrum/release-2.0",
 			ICONS8_URL = "https://icons8.com/",
 			SERIAL_LIBRARY_URL = "https://fazecast.github.io/jSerialComm/",
-			ANTONGECKO_URL = "https://github.com/antongecko",
-			CONTACT_ME_URL = "mailto:antongecko37@gmail.com";
+			geckoanton_URL = "https://github.com/geckoanton",
+			CONTACT_ME_URL = "mailto:geckoanton37@gmail.com";
 	private static final String EDITOR_FXML_LOCATION = "/ui/editor/editor.fxml",
 			WELCOME_PAGE_FXML_LOCATION = "/ui/editor/welcomePage/welcomePage.fxml";
 

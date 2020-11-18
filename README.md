@@ -1,7 +1,7 @@
 # Quadrum
 
 <p align="left">
-  <a href="https://antongecko.github.io/quadrum/">
+  <a href="https://geckoanton.github.io/quadrum/">
     <img src="logo.png" width="128" alt="Quadrum logo">
   </a>
 </p>
@@ -10,7 +10,7 @@
 [![Version](https://img.shields.io/badge/license-GPL--3.0-blue)](https://www.gnu.org/licenses/)
 [![Version](https://img.shields.io/badge/build-passing-brightgreen)](https://img.shields.io/badge/build-passing-brightgreen)
 
-Quadrum is a LED-Cube framework and editor built to make it easier to upload and stream animations. Visit <https://antongecko.github.io/quadrum/> for help regarding implementation details of Quadrum, as well as downloadable release versions of the Quadrum editor (available for Windows, Linux and MacOS) and Arduino library.
+Quadrum is a LED-Cube framework and editor built to make it easier to upload and stream animations. Visit <https://geckoanton.github.io/quadrum/> for help regarding implementation details of Quadrum, as well as downloadable release versions of the Quadrum editor (available for Windows, Linux and MacOS) and Arduino library.
 
 ## IntelliJ Development
 

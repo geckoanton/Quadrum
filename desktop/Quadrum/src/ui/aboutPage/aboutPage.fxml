@@ -38,7 +38,7 @@
                   <HBox alignment="CENTER" prefHeight="0.0" prefWidth="541.0">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Contact me:" />
-                        <Hyperlink onAction="#contactHyperlinkAction" text="antongecko37@gmail.com" />
+                        <Hyperlink onAction="#contactHyperlinkAction" text="geckoanton37@gmail.com" />
                      </children>
                      <opaqueInsets>
                         <Insets top="10.0" />
@@ -68,7 +68,7 @@
                         <Insets />
                      </VBox.margin>
                   </HBox>
-                  <Hyperlink onAction="#quadrumHyperLinkAction" text="https://antongecko.github.io/quadrum/" />
+                  <Hyperlink onAction="#quadrumHyperLinkAction" text="https://geckoanton.github.io/quadrum/" />
                </children>
                <opaqueInsets>
                   <Insets />
@@ -125,13 +125,13 @@
                     <children>
                         <HBox alignment="BOTTOM_CENTER" prefHeight="0.0" prefWidth="550.0" spacing="5.0">
                             <children>
-                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Copyright © 2020 antongecko. All rights reserved.">
+                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Copyright © 2020 geckoanton. All rights reserved.">
                            <HBox.margin>
                               <Insets bottom="-2.0" />
                            </HBox.margin></Text>
                             </children>
                         </HBox>
-                        <Hyperlink onAction="#antongeckoHyperLinkAction" text="https://github.com/antongecko" />
+                        <Hyperlink onAction="#geckoantonHyperLinkAction" text="https://github.com/geckoanton" />
                     </children>
                 </VBox>
                 <BorderPane prefHeight="0.0" prefWidth="550.0" VBox.vgrow="NEVER">

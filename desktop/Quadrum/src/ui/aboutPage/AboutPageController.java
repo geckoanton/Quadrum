@@ -3,10 +3,10 @@
  *
  *       Created on:  Okt 29, 2020
  *  Last Updated on:  Okt 29, 2020
- *           Author:  Anton Gecko https://github.com/antongecko
+ *           Author:  Gecko Anton https://github.com/geckoanton
  *
  * Quadrum is a LED-Cube framework and editor.
- * Copyright (C) 2020  antongecko
+ * Copyright (C) 2020  geckoanton
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -39,8 +39,8 @@ public class AboutPageController {
 		aboutStage.close();
 	}
 	@FXML
-	public void antongeckoHyperLinkAction() {
-		GeneralMethods.openUrl(Editor.ANTONGECKO_URL);
+	public void geckoantonHyperLinkAction() {
+		GeneralMethods.openUrl(Editor.geckoanton_URL);
 	}
 	public void icons8HyperLinkAction() {
 		GeneralMethods.openUrl(Editor.ICONS8_URL);
